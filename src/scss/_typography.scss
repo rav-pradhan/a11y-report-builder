@@ -1,0 +1,53 @@
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1140,21,1.067,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+	--text-size--2: clamp(0.78rem, 0.64rem + 0.73vw, 1.15rem);
+	--text-size--1: clamp(0.94rem, 0.82rem + 0.57vw, 1.23rem);
+	--text-size-0: clamp(1.13rem, 1.05rem + 0.37vw, 1.31rem);
+	--text-size-1: clamp(1.35rem, 1.33rem + 0.1vw, 1.4rem);
+	--text-size-2: clamp(1.62rem, 1.67rem + -0.25vw, 1.49rem);
+	--text-size-3: clamp(1.94rem, 2.08rem + -0.68vw, 1.59rem);
+	--text-size-4: clamp(2.33rem, 2.58rem + -1.23vw, 1.7rem);
+	--text-size-5: clamp(2.8rem, 3.18rem + -1.92vw, 1.82rem);
+}
+
+h1 {
+	font-size: var(--text-size-4);
+}
+
+h2 {
+	font-size: var(--text-size-3);
+}
+
+h3 {
+	font-size: var(--text-size-2);
+}
+
+h4 {
+	font-size: var(--text-size-1);
+}
+
+h5, h6 {
+	font-size: var(--text-size-0);
+}
+
+p,
+a,
+li {
+	font-size: var(--text-size-0);
+	max-width: 60ch;
+}
+
+li {
+	line-height: var(--s2);
+}
+
+a {
+	text-decoration-color: var(--stone-blue);
+	text-decoration-thickness: 0.3em;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}

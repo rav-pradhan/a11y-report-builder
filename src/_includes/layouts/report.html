@@ -1,0 +1,20 @@
+<div class="wrapper report">
+	<div class="with-sidebar">
+		<div>
+			TOC here
+		</div>
+		<div>
+			<h1>Accessibility Evaluation: {{ site.name }}</h1>
+			<article class="stack">
+				{% for section in collections.reportSections %}
+				<section id={{section.ID}}>
+					{% markdown %}
+					{%- include section.url -%}
+					{% endmarkdown %}
+				</section>
+				{% endfor %}
+			</article>
+		</div>
+	</div>
+
+</div>
