@@ -1,0 +1,10 @@
+<nav class="toc" aria-labelledby="toc-heading">
+    <strong id="toc-heading">Contents</strong>
+    <ol class="stack">
+        {% for section in collections.reportSections %}
+        <li>
+            <a href="#{{section.ID}}">{{ section.title }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+</nav>

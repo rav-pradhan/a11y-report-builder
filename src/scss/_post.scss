@@ -1,0 +1,24 @@
+.post {
+	--flow-space: var(--s1);
+
+	width: 90vw;
+	width: clamp(16rem, 90vw, 70rem);
+}
+
+.post time {
+	--flow-space: var(--s1);
+	display: block;
+}
+
+.post :is(h2, h3) {
+	--flow-space: var(--s3);
+}
+
+.post :is(h2, h3) + * {
+	--flow-space: var(--s1);
+}
+
+.post figure,
+.post figure + * {
+	--flow-space: var(--s1);
+}

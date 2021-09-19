@@ -1,6 +1,7 @@
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const matter = require('gray-matter');
 
 module.exports = (config) => {
     // Set Markdown config
@@ -26,13 +27,17 @@ module.exports = (config) => {
 	// Build a reportedSections computed data object for table of contents and tidier templates
 	config.addCollection("reportSections", (collection) => {
 		const sections = collection.getFilteredByGlob('./src/report/*.md').map(section => {
+			const separatedMetadataAndContent = matter(section.template.inputContent)
 			return {
 				ID: section.fileSlug,
-				title: section.title,
+				title: separatedMetadataAndContent.data.title,
+				order: separatedMetadataAndContent.data.order,
 				url: `../..${section.filePathStem}.md`,
+				content: separatedMetadataAndContent.content,
+				isEmpty: separatedMetadataAndContent.isEmpty
 			}
 		})
-		return sections
+		return sections.sort((a, b) => a.order - b.order);
 	})
 
 	config.addPairedShortcode("markdown", content => {

@@ -1,0 +1,9 @@
+.toc {
+	--flow-space: var(--s-1);
+	position: sticky;
+	padding: var(--s0) 0;
+	top: 0;
+	ol {
+		padding-left: var(--s1);
+	}
+}

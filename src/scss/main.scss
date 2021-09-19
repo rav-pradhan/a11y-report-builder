@@ -1,4 +1,5 @@
 :root {
+	--lake-blue: #2e6774;
 	--stone-blue: #a7bed3;
 	--sea-blue: #c6e2e9;
 	--pastel-yellow: #f1ffc4;
@@ -20,6 +21,9 @@
 @import "sidebar";
 @import "stack";
 
+@import "post";
+@import "toc";
+
 * {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
 		"Helvetica Neue", sans-serif;
@@ -35,13 +39,14 @@ body {
 }
 
 .report {
-	padding: clamp(1rem, 80vw, 2rem);
+	padding: clamp(1rem, 85vw, 2rem);
 }
 
 section {
 	pre {
 		code {
 			padding: 0;
+			word-wrap: break-word !important;
 			white-space: pre-wrap !important;
 		}
 	}
@@ -63,9 +68,14 @@ small {
 pre {
 	font-size: 0.9rem;
 	border-radius: 8px !important;
+	max-width: 90% !important;
 	margin: 2.4rem 0 !important;
 	code {
 		padding: 0;
+	}
+
+	@media screen and (min-width: 40em) {
+		width: 65% !important;
 	}
 }
 

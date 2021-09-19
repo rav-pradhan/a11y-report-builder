@@ -1,20 +1,16 @@
 <div class="wrapper report">
 	<div class="with-sidebar">
+		<div>{% include "partials/toc.html" %}</div>
 		<div>
-			TOC here
-		</div>
-		<div>
-			<h1>Accessibility Evaluation: {{ site.name }}</h1>
-			<article class="stack">
+			<article class="post stack">
+				<h1>Accessibility Evaluation: {{ site.name }}</h1>
 				{% for section in collections.reportSections %}
-				<section id={{section.ID}}>
+					<h2 id={{section.ID}}>{{- section.title -}}</h2>
 					{% markdown %}
-					{%- include section.url -%}
+					{{- section.content -}}
 					{% endmarkdown %}
-				</section>
 				{% endfor %}
 			</article>
 		</div>
 	</div>
-
 </div>
